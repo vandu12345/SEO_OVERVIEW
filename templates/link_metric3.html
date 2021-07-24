@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>On Page Seo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+      }
+    </style>
+</head>
+<center><h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+    
+{% if url is not none%}
+
+  {%if count %}
+  <br><br><br><br><br><br>
+  <table>
+    <tr>
+        <th>URL </th>
+        <th><a href = {{url}}>{{url}}</a></th>
+      </tr>
+    <tr>
+      <th>Total No OF URL </th>
+      <th>{{count}}</th>
+    </tr>
+    <tr>
+        <th>Total No OF Internal URL </th>
+        <th>{{internal}}</th>
+      </tr>
+      <tr>
+        <th>Total No OF External URL </th>
+        <th>{{external}}</th>
+      </tr>
+  </table>
+  {% else %}
+    <h1>No URL Found</h1>
+    {% endif %}
+{% else %}
+<h1>Enter URL : </h1>
+{% endif %}
+</center>
+<center> 
+    {% if chart2 %}
+    <img src="data:image/png;base64,{{chart2|safe}}">
+    {% endif %}
+  </center>
+</html>

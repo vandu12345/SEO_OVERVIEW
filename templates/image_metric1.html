@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>On Page Seo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+      }
+    </style>
+</head>
+<center><h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+{% if url is not none%}
+
+  {%if img_list|length %}
+  <br><br><br><br><br><br>
+  <table>
+      <tr>
+        <th>URL </th>
+        <th><a href ={{url}}>{{url}}</a> </th>
+      </tr>
+      <tr>
+        <th>No Of Images </th>
+        <th>{{count}}</th>
+      </tr>
+      <tr>
+        <th>Sum Of Images </th>
+        <th>{{sum}} KB</th>
+      </tr>
+      <tr>
+        <th>Max Of Images </th>
+        <th>{{max}} KB</th>
+      </tr>
+      <tr>
+        <th>Min Of Images </th>
+        <th>{{min}} KB</th>
+      </tr>
+      <tr>
+        <th>Mean Of Images </th>
+        <th>{{average}} KB</th>
+      </tr>
+      <tr>
+        <th>Standard Deviation Of Images </th>
+        <th>{{sd}} KB</th>
+      </tr>
+      <tr>
+        <th> Images Problem in URL  </th>
+        <th>{{t}}</th>
+      </tr>
+      <tr>
+        <th>Overrall Performance</th>
+        <th>{{overall}}</th>
+      </tr>
+      <!-- <tr>
+      {% for j in img_list %}
+      <th>{{loop.index}}</th>
+      <th><a href={{ j }}>{{j}}</a></th>
+      </tr>  
+    {% endfor %} -->
+    </table></center>
+    {% else %}
+    <center><h2>No Image Found</h2></center>
+    {% endif %}
+
+{% else %}
+<center><h1>Enter URL : </h1></center>
+{% endif %}
+  <center> 
+  {% if chart %}
+  <img src="data:image/png;base64,{{chart|safe}}">
+  {% endif %}
+</center>
+
+
+
+</html>

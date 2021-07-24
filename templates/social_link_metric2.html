@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <center><title>On Page Seo</title>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        
+        table {
+          width: 100%;
+        }
+        </style>
+</head>
+<h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+<!-- {% if zip|length == 0 and  url|length > 0%}
+<h1>No Social Media Link Found</h1>
+{% endif %} -->
+<table>
+{% for element1,element2 in zip %}
+<tr>
+
+<th>{{element2}}</th>
+<th><a href={{element1}}>{{element1}}</a></th>
+</tr>
+{% endfor %}
+</table>
+<!-- {% for element in list2 %}
+<h1>{{element}}</h1><br>
+{% endfor %} -->
+<h1>Enter URL</h1>   
+</center>         
+</html>
+

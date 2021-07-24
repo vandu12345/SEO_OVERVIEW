@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>On Page Seo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+      }
+    </style>
+</head>
+<center><h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+    
+{% if url is not none%}
+
+  {%if dict1|length %}
+  <br><br><br><br><br><br>
+  <table>
+    <tr>
+        <th>URL </th>
+        <th><a href = {{url}}>{{url}}</a></th>
+    </tr>
+    <tr>
+      <th colspan=2></th>
+    </tr>
+    <tr>
+      <th colspan=2>Word Density Analysis</th>
+    </tr>
+    <tr><th> No Of Words</th>
+    <th>{{length}}</th>
+    </tr>
+    <tr>
+      <th>Word</th>
+      <th>Frequency</th>
+    </tr>
+    <tr>
+        {% for k,v in dict2 %}
+        <th>{{k}}</th>
+        <th>{{v}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <h1>No Important Text Found</h1>
+    {% endif %}
+{% else %}
+<h1>Enter URL :</h1>
+{% endif %}

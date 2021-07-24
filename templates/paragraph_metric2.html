@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>On Page Seo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+      }
+    </style>
+</head>
+<center><h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+{% if url is not none%}
+
+  {%if count %}
+  <br><br><br><br><br><br>
+  <table>
+      <tr>
+        <th>URL </th>
+        <th><a href ={{url}}>{{url}}</a> </th>
+      </tr>
+      <tr>
+        <th>No Of Paragraphs </th>
+        <th>{{count}}</th>
+      </tr>
+      <tr>
+        <th>Sum Of Paragraph in Words </th>
+        <th>{{sum}} </th>
+      </tr>
+      <tr>
+        <th>Max Of Paragraphs in Words </th>
+        <th>{{max}} </th>
+      </tr>
+      <tr>
+        <th>Min Of Paragraphs in Words </th>
+        <th>{{min}} </th>
+      </tr>
+      <tr>
+        <th>Mean Of Paragraphs in Words </th>
+        <th>{{average}} </th>
+      </tr>
+      <tr>
+        <th>Standard Deviation Of Paragraphs in Words </th>
+        <th>{{sd}} </th>
+      </tr>
+      <tr>
+        <th>Overrall Performance</th>
+        <th>{{overall}}</th>
+      </tr>
+      <!-- <tr>
+      {% for j in img_list %}
+      <th>{{loop.index}}</th>
+      <th><a href={{ j }}>{{j}}</a></th>
+      </tr>  
+    {% endfor %} -->
+    </table></center>
+    {% else %}
+    <center><h2>No Paragraph Found</h2></center>
+    {% endif %}
+
+{% else %}
+<center><h1>Enter URL : </h1></center>
+{% endif %}
+  <center> 
+  {% if chart1 %}
+  <img src="data:image/png;base64,{{chart1|safe}}">
+  {% endif %}
+</center>
+
+
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>On Page Seo</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 20px;
+      }
+    </style>
+</head>
+<center><h1>On Page Seo</h1>
+<form method="post">
+    {% csrf_token %}
+  URL :<input type="text" name="name" />
+  <button type="submit">Submit</button>
+</form></center>
+<center>
+    
+{% if url is not none%}
+{%if list1|length %}
+  <br><br><br><br><br><br>
+  <table>
+    <tr>
+        <th>URL </th>
+        <th><a href = {{url}}>{{url}}</a></th>
+      </tr>
+      <tr>
+          <th colspan=2>Meta Description should be Under 155-160 character</th>
+      </tr>
+
+          {% for i in list1 %}
+          <tr>
+            <th>Meta Desc</th>
+            <th>{{i}}</th> 
+        </tr>
+        <tr>
+            <th>Length</th>
+            <th>{{i|length}}</th>
+        </tr>
+        {% endfor%}
+    </table>
+    {% else %}
+    <h1>No Meta Tag Found</h1>
+    {% endif %}
+
+  {% else %}
+    <h1>Enter URL :</h1>
+    {% endif %}
+    </center>
+    </html>
