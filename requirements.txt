@@ -2,7 +2,5 @@ asgiref==3.4.1
 Django==3.2.5
 pytz==2021.1
 sqlparse==0.4.1
-regex @ file:///tmp/build/80754af9/regex_1593435547652/work
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
 requests-html==0.10.0
 urllib3==1.25.9
