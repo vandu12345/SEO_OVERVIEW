@@ -25,7 +25,7 @@ SECRET_KEY = 'ep+*=jko1bl4$3&=q^_ll0121qcp1k@!+90xb_wb+uy-%bo#tb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
+ALLOWED_HOSTS = ['seo--analysis.herokuapp.com']
 
 
 # Application definition
