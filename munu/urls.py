@@ -33,8 +33,8 @@ urlpatterns = [
     path('header_description_metric8.html',views.HTTP_HEADER_description_metric8),
     path('canonical_tag_metric9.html',views.canonical_tag_metric9),
     path('robots_text_metric10.html',views.robotstext_metric10),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
+    # url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
 ]
     
 
